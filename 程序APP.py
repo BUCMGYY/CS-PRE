@@ -94,13 +94,13 @@ label_mapping = {
 }
 
 # 动态生成输入项
-st.markdown("<h1 style='text-align: center;'>手法疗效预测模型</h1>", unsafe_allow_html=True)
-st.markdown("<p style='text-align: center; font-size:16px; color:gray;'>（请在严格明确手法适应症后使用该预测模型）</p>", unsafe_allow_html=True)
+st.title("手法疗效预测模型")
+st.header("请在严格明确手法适应症后使用该预测模型")
 feature_values = []
 for feature, properties in feature_ranges.items():
     if properties["type"] == "numerical":
         value = st.number_input(
-            label=f"{feature}",
+            label=feature,
             min_value=float(properties["min"]),
             max_value=float(properties["max"]),
             value=float(properties["default"]),
