@@ -94,8 +94,9 @@ label_mapping = {
 }
 
 # 动态生成输入项
-st.title("手法疗效预测模型")
-st.header("请在严格明确手法适应症后使用该预测模型")
+st.markdown("<h1 style='text-align: center;'>手法疗效预测模型</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; font-size:12px; color:gray;'>（请在严格明确手法适应症后使用该预测模型）</p>", unsafe_allow_html=True)
+
 feature_values = []
 for feature, properties in feature_ranges.items():
     if properties["type"] == "numerical":
