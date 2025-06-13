@@ -33,9 +33,6 @@ feature_ranges = {
     "Exacerbation on Extension": {"type": "categorical", "options": [0, 1]},
 }
 
-# Streamlit 界面
-st.title("Prediction Model with SHAP Visualization")
-
 label_mapping = {
     "Spring test-pain": {0: "无压痛", 1: "单节段", 2: "2-3节段", 3: "广泛压痛"},
     "Muscle tightness": {0: "无", 1: "单部位", 2: "2-3部位", 3: "广泛紧张"},
@@ -44,7 +41,7 @@ label_mapping = {
 }
 
 # 动态生成输入项
-st.title("MLP模型预测手法治疗获益")
+st.title("手法疗效预测模型")
 st.header("请输入以下特征:")
 feature_values = []
 for feature, properties in feature_ranges.items():
@@ -85,7 +82,7 @@ if st.button("预测"):
 
     # 创建预测结果文本
     predicted_class_name = category_mapping[predicted_class]  # 获取中文类别名称
-    text = f"模型预测：您接受手法治疗的获益类别为: {predicted_class_name}，另一获益概率：\n"
+    text = f"模型预测：您接受手法治疗的获益类别为: {predicted_class_name}(截断概率阈值为60.3%），概率分别为：\n"
     for i, prob in enumerate(probabilities):
         category_name = category_mapping[i]  # 获取中文类别名称
         text += f"{category_name}: {prob:.2f}%\n"
