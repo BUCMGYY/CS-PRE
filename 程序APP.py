@@ -143,10 +143,10 @@ if st.button("预测"):
     # 构建解释文本
     if predicted_class == 1:
         recommendation = "提示该患者适合手法治疗。"
-        text = f"根据模型预测，该患者高获益的可能性为 {high_benefit_prob:.1f}%，截断概率阈值为 60.3%。\n{recommendation}"
+        text = f"根据模型预测，该患者高获益的可能性为 {high_benefit_prob:.1f}%（截断概率阈值为 60.3%）。\n{recommendation}"
     else:
         recommendation = "提示该患者可能不适合手法治疗。"
-        text = f"根据模型预测，该患者低获益的可能性为 {low_benefit_prob:.1f}%，截断概率阈值为 60.3%。\n{recommendation}"
+        text = f"根据模型预测，该患者低获益的可能性为 {low_benefit_prob:.1f}%（截断概率阈值为 60.3%）。\n{recommendation}"
 
     # 加载中文字体
     fm.fontManager.addfont(font_path)
