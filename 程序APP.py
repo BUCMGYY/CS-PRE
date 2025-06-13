@@ -100,7 +100,7 @@ feature_values = []
 for feature, properties in feature_ranges.items():
     if properties["type"] == "numerical":
         value = st.number_input(
-            label=f"{feature} ({properties['min']} - {properties['max']})",
+            label=f"{feature}",
             min_value=float(properties["min"]),
             max_value=float(properties["max"]),
             value=float(properties["default"]),
