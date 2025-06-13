@@ -22,15 +22,52 @@ model = joblib.load('MLP.pkl')
 
 # 特征范围定义（根据提供的特征范围和数据类型）
 feature_ranges = {
-    "Age": {"type": "numerical", "min": 12, "max": 72, "default": 50},
-    "Symptom Duration": {"type": "numerical", "min": 1, "max": 360, "default": 25},
-    "Flexion": {"type": "numerical", "min": 15, "max": 60, "default": 40},
-    "Extension": {"type": "numerical", "min": 15, "max": 50, "default": 36},
-    "Rotation": {"type": "numerical", "min": 35, "max": 80, "default": 50},
-    "Spring test-pain": {"type": "categorical", "options": [0, 1, 2, 3]},
-    "Muscle tightness": {"type": "categorical", "options": [0, 1, 2, 3]},
-    "Exacerbation on Flexion": {"type": "categorical", "options": [0, 1]},
-    "Exacerbation on Extension": {"type": "categorical", "options": [0, 1]},
+    "年龄": {
+        "type": "numerical",
+        "min": 12.0,
+        "max": 72.0,
+        "default": 50.0
+    },
+    "症状持续时间(天)": {
+        "type": "numerical",
+        "min": 1.0,
+        "max": 360.0,
+        "default": 25.0
+    },
+    "前屈活动度": {
+        "type": "numerical",
+        "min": 15.0,
+        "max": 60.0,
+        "default": 40.0
+    },
+    "后伸活动度": {
+        "type": "numerical",
+        "min": 15.0,
+        "max": 50.0,
+        "default": 36.0
+    },
+    "旋转活动度": {
+        "type": "numerical",
+        "min": 35.0,
+        "max": 80.0,
+        "default": 50.0
+    },
+    "压痛试验": {
+        "type": "categorical",
+        "options": [0, 1, 2, 3]
+    },
+    "肌肉紧张程度": {
+        "type": "categorical",
+        "options": [0, 1, 2, 3]
+    },
+    "前屈加重": {
+        "type": "categorical",
+        "options": [0, 1]
+    },
+    "后伸加重": {
+        "type": "categorical",
+        "options": [0, 1]
+    }
 }
 
 label_mapping = {
